@@ -13,7 +13,7 @@
 <main>
 	<div class="intro-container">
 		{#if ready}
-			<p class="intro-text" in:fly="{{ x: -200, duration: 1440 }}">My name is<br><b style="font-size: 48pt;color: var(--highlight);">Colin Heffernan</b><br>and I write code.</p>
+			<p class="intro-text" in:fly="{{ x: -200, duration: 1440 }}">My name is<br><b style="font-size: 48pt;color: var(--highlight);transition: color 0.5s ease-out;">Colin Heffernan</b><br>and I write code.</p>
 			<img src="/me.png" alt="Me!" class="intro-photo" in:fly="{{ x: 200, duration: 1440 }}"/>
 		{/if}
 	</div>
@@ -97,22 +97,6 @@
 	a {
 		text-decoration: none;
 	}
-	@keyframes fadeIn {
-		0% {
-			background-color: var(--highlight);
-		}
-		100% {
-			background-color: var(--highlight-2);
-		}
-	}
-	@keyframes fadeOut {
-		0% {
-			background-color: var(--highlight-2);
-		}
-		100% {
-			background-color: var(--highlight);
-		}
-	}
 	.intro-container, .about-me-container,
 	.projects-container, .contact-container {
 		align-items: center;
@@ -127,14 +111,17 @@
 	}
 	.intro-container, .projects-container {
 		background-color: var(--bg-lighter);
+		transition: background-color 0.5s ease-out;
 	}
 	.about-me-container, .project-container,
 	.contact-container {
 		background-color: var(--bg-darker);
+		transition: background-color 0.5s ease-out;
 	}
 	.intro-text {
 		color: var(--text);
 		font-size: 36pt;
+		transition: color 0.5s ease-out;
 	}
 	.intro-photo {
 		height: 500px;
@@ -148,11 +135,13 @@
 		color: var(--highlight);
 		font-size: 36pt;
 		margin: 16px;
+		transition: color 0.5s ease-out;
 	}
 	.about-me-text {
 		color: var(--text);
 		font-size: 24pt;
 		margin: 0px;
+		transition: color 0.5s ease-out;
 		width: 1080px;
 	}
 	.project-container {
@@ -168,12 +157,14 @@
 		font-size: 30pt;
 		margin: 16px 0 0 0;
 		text-align: center;
+		transition: color 0.5s ease-out;
 	}
 	.project-desc {
 		color: var(--text);
 		font-size: 18pt;
 		margin: 16px 0;
 		text-align: center;
+		transition: color 0.5s ease-out;
 	}
 	.project-buttons {
 		align-items: center;
@@ -197,9 +188,11 @@
 		color: var(--bg-lighter);
 		font-size: 18pt;
 		text-align: center;
+		transition: color 0.5s ease-out;
 	}
 	.contact-text {
 		color: var(--text);
 		font-size: 24pt;
+		transition: color 0.5s ease-out;
 	}
 </style>

@@ -2,19 +2,19 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="5"
-   height="5"
-   viewBox="0 0 1.3229166 1.3229167"
+   width="40"
+   height="40"
+   viewBox="0 0 40 40"
    version="1.1"
-   id="svg5"
+   id="svg183"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
-   sodipodi:docname="toggle-dark.svg"
+   sodipodi:docname="toggle.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
-     id="namedview7"
+     id="namedview185"
      pagecolor="#505050"
      bordercolor="#eeeeee"
      borderopacity="1"
@@ -24,9 +24,9 @@
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="69.01997"
-     inkscape:cx="4.1654611"
-     inkscape:cy="4.0133312"
+     inkscape:zoom="17.254993"
+     inkscape:cx="26.514065"
+     inkscape:cy="22.196474"
      inkscape:window-width="2493"
      inkscape:window-height="1426"
      inkscape:window-x="0"
@@ -34,14 +34,14 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" />
   <defs
-     id="defs2" />
+     id="defs180" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       id="path2091"
-       style="fill:#c0caf5;fill-opacity:1;stroke:#c0caf5;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
-       d="M 0.84077555 0.2056722 A 0.45824483 0.45824483 0 0 1 0.91673991 0.45836995 A 0.45824483 0.45824483 0 0 1 0.45836995 0.91673991 A 0.45824483 0.45824483 0 0 1 0.2056722 0.84025879 A 0.48947915 0.48947915 0 0 0 0.66145833 1.1508341 A 0.48947915 0.48947915 0 0 0 1.1508341 0.66145833 A 0.48947915 0.48947915 0 0 0 0.84077555 0.2056722 z " />
+       id="path406"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none"
+       d="M 27.90625 6.09375 A 16 16 0 0 1 30 14 A 16 16 0 0 1 14 30 A 16 16 0 0 1 6.1191406 27.880859 A 16 16 0 0 0 20 36 A 16 16 0 0 0 36 20 A 16 16 0 0 0 27.90625 6.09375 z " />
   </g>
 </svg>

@@ -29,10 +29,11 @@
 		padding: 0;
 		width: 100%;
 		height: 48px;
+		transition: background-color 0.5s ease-out;
 		li {
 			float: left;
 			a {
-				transition: background-color 0.5s ease-out;
+				transition: color 0.5s ease-out, background-color 0.5s ease-out;
 				display: block;
 				color: var(--text);
 				text-align: center;
