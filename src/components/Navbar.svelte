@@ -42,22 +42,6 @@
 </ul>
 
 <style lang="scss">
-	@keyframes fadeIn {
-		0% {
-			background-color: transparent;
-		}
-		100% {
-			background-color: var(--bg-lightest);
-		}
-	}
-	@keyframes fadeOut {
-		0% {
-			background-color: var(--bg-lightest);
-		}
-		100% {
-			background-color: transparent;
-		}
-	}
 	/* Taken mostly from W3Schools */
 	ul {
 		background-color: var(--bg-darker);
@@ -73,26 +57,24 @@
 		li {
 			font-weight: bold;
 			a {
-				animation: fadeOut 0.5s ease-out;
+				transition: background-color 0.5s ease-out;
 				display: block;
 				color: var(--text);
 				text-align: center;
 				text-decoration: none;
 				&:hover {
-					animation: fadeIn 0.5s ease-out;
 					background-color: var(--bg-lightest);
 				}
 			}
 		}
 	}
 	.bar-logo {
-		animation: fadeOut 0.5s ease-out;
+		transition: background-color 0.5s ease-out;
 		display: block;
 		float: left;
 		height: 40px;
 		padding: 4px 10px 4px 10px;
 		&:hover {
-			animation: fadeIn 0.5s ease-out;
 			background-color: var(--bg-lightest);
 		}
 	}
@@ -104,13 +86,12 @@
 		padding: 14px 16px;
 	}
 	.bar-theme-toggle {
-		animation: fadeOut 0.5s ease-out;
+		transition: background-color 0.5s ease-out;
 		background-color: #00000000;
 		display: block;
 		border-width: 0;
 		float: right;
 		&:hover {
-			animation: fadeIn 0.5s ease-out;
 			background-color: var(--bg-lightest);
 		}
 	}

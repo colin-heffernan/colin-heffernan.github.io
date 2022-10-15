@@ -19,22 +19,6 @@
 </ul>
 
 <style lang="scss">
-	@keyframes fadeIn {
-		0% {
-			background-color: transparent;
-		}
-		100% {
-			background-color: var(--bg-lightest);
-		}
-	}
-	@keyframes fadeOut {
-		0% {
-			background-color: var(--bg-lightest);
-		}
-		100% {
-			background-color: transparent;
-		}
-	}
 	/* Taken mostly from W3Schools */
 	ul {
 		font-family: Tinos;
@@ -48,14 +32,13 @@
 		li {
 			float: left;
 			a {
-				animation: fadeOut 0.5s ease-out;
+				transition: background-color 0.5s ease-out;
 				display: block;
 				color: var(--text);
 				text-align: center;
 				padding: 14px 16px;
 				text-decoration: none;
 				&:hover {
-					animation: fadeIn 0.5s ease-out;
 					background-color: var(--bg-lightest);
 				}
 			}

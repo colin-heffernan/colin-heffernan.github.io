@@ -183,7 +183,7 @@
 		width: 100%;
 	}
 	.project-github-button {
-		animation: fadeOut 0.5s ease-out;
+		transition: background-color 0.5s ease-out;
 		background-color: var(--highlight);
 		border-radius: 16px;
 		display: block;
@@ -191,7 +191,6 @@
 		padding: 0 16px; 
 		&:hover {
 			background-color: var(--highlight-2);
-			animation: fadeIn 0.5s ease-out;
 		}
 	}
 	.project-github-button-label {

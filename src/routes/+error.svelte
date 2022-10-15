@@ -43,6 +43,10 @@
 <style lang="scss">
 	a {
 		color: var(--highlight);
+		transition: color 0.5s ease-out;
+		&:hover {
+			color: var(--highlight-2);
+		}
 	}
 	.error-container {
 		align-items: center;
