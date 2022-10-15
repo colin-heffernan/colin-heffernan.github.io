@@ -2,7 +2,7 @@
 	import { onMount } from "svelte";
 	import { fly } from "svelte/transition";
 	let ready = false;
-	onMount(async () => {
+	onMount((): void => {
 		ready = true;
 	});
 </script>
@@ -97,6 +97,22 @@
 	a {
 		text-decoration: none;
 	}
+	@keyframes fadeIn {
+		0% {
+			background-color: var(--highlight);
+		}
+		100% {
+			background-color: var(--highlight-2);
+		}
+	}
+	@keyframes fadeOut {
+		0% {
+			background-color: var(--highlight-2);
+		}
+		100% {
+			background-color: var(--highlight);
+		}
+	}
 	.intro-container, .about-me-container,
 	.projects-container, .contact-container {
 		align-items: center;
@@ -167,11 +183,16 @@
 		width: 100%;
 	}
 	.project-github-button {
+		animation: fadeOut 0.5s ease-out;
 		background-color: var(--highlight);
 		border-radius: 16px;
 		display: block;
 		width: 196px;
 		padding: 0 16px; 
+		&:hover {
+			background-color: var(--highlight-2);
+			animation: fadeIn 0.5s ease-out;
+		}
 	}
 	.project-github-button-label {
 		color: var(--bg-lighter);

@@ -1,39 +1,63 @@
 <script lang="ts">
 	import { theme } from "./theme";
+	import { onMount } from "svelte";
+	import { fly } from "svelte/transition";
+	let ready = false;
+	onMount((): void => {
+		ready = true;
+	});
 </script>
 
 <svelte:head>
 	<link href="https://fonts.googleapis.com/css?family=Tinos" rel="stylesheet">
 </svelte:head>
 <ul>
-	<li>
-		<a href="/">
-			<img src="/logo-{$theme}.svg" alt="Logo" class="bar-logo" />
-		</a>
-	</li>
-	<!-- <li>
-		<a href="/projects" class="bar-link">
-			Projects
-		</a>
-	</li> -->
-	<li>
-		<a href="https://github.com/colin-heffernan" class="bar-link">
-			GitHub
-		</a>
-	</li>
-	<li>
-		<a href="https://linkedin.com/in/colin-heffernan" class="bar-link">
-			LinkedIn
-		</a>
-	</li>
-	<li>
-		<button class="bar-theme-toggle" on:click={theme.toggle}>
-			<img src="/toggle-{$theme}.svg" alt="Theme toggler" class="bar-theme-toggle-icon" />
-		</button>
-	</li>
+	{#if ready}
+		<li in:fly="{{ y: -48, duration: 1440 }}">
+			<a href="/">
+				<img src="/logo-{$theme}.svg" alt="Logo" class="bar-logo" />
+			</a>
+		</li>
+		<!-- <li>
+			<a href="/projects" class="bar-link">
+				Projects
+			</a>
+		</li> -->
+		<li in:fly="{{ y: -48, duration: 1440, delay: 120 }}">
+			<a href="https://github.com/colin-heffernan" class="bar-link">
+				GitHub
+			</a>
+		</li>
+		<li in:fly="{{ y: -48, duration: 1440, delay: 240 }}">
+			<a href="https://linkedin.com/in/colin-heffernan" class="bar-link">
+				LinkedIn
+			</a>
+		</li>
+		<li in:fly="{{ y: -48, duration: 1440, delay: 360 }}">
+			<button class="bar-theme-toggle" on:click={theme.toggle}>
+				<img src="/toggle-{$theme}.svg" alt="Theme toggler" class="bar-theme-toggle-icon" />
+			</button>
+		</li>
+	{/if}
 </ul>
 
 <style lang="scss">
+	@keyframes fadeIn {
+		0% {
+			background-color: transparent;
+		}
+		100% {
+			background-color: var(--bg-lightest);
+		}
+	}
+	@keyframes fadeOut {
+		0% {
+			background-color: var(--bg-lightest);
+		}
+		100% {
+			background-color: transparent;
+		}
+	}
 	/* Taken mostly from W3Schools */
 	ul {
 		background-color: var(--bg-darker);
@@ -46,27 +70,31 @@
 		top: 0;
 		width: 100%;
 		height: 48px;
-	}
-	li {
-		font-weight: bold;
-	}
-	li a {
-		display: block;
-		color: var(--text);
-		text-align: center;
-		text-decoration: none;
-	}
-	li a:hover {
-		background-color: var(--bg-lightest);
+		li {
+			font-weight: bold;
+			a {
+				animation: fadeOut 0.5s ease-out;
+				display: block;
+				color: var(--text);
+				text-align: center;
+				text-decoration: none;
+				&:hover {
+					animation: fadeIn 0.5s ease-out;
+					background-color: var(--bg-lightest);
+				}
+			}
+		}
 	}
 	.bar-logo {
+		animation: fadeOut 0.5s ease-out;
 		display: block;
 		float: left;
 		height: 40px;
 		padding: 4px 10px 4px 10px;
-	}
-	.bar-logo:hover {
-		background-color: var(--bg-lightest);
+		&:hover {
+			animation: fadeIn 0.5s ease-out;
+			background-color: var(--bg-lightest);
+		}
 	}
 	.bar-logo, .bar-link {
 		float: left;
@@ -76,13 +104,15 @@
 		padding: 14px 16px;
 	}
 	.bar-theme-toggle {
+		animation: fadeOut 0.5s ease-out;
 		background-color: #00000000;
 		display: block;
 		border-width: 0;
 		float: right;
-	}
-	.bar-theme-toggle:hover {
-		background-color: var(--bg-lightest);
+		&:hover {
+			animation: fadeIn 0.5s ease-out;
+			background-color: var(--bg-lightest);
+		}
 	}
 	.bar-theme-toggle-icon {
 		float: right;

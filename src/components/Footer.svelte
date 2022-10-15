@@ -1,16 +1,41 @@
 <script lang="ts">
+	import { onMount } from "svelte";
+	import { fly } from "svelte/transition";
+	let ready = false;
+	onMount((): void => {
+		ready = true;
+	});
 </script>
 
 <svelte:head>
 	<link href="https://fonts.googleapis.com/css?family=Tinos" rel="stylesheet">
 </svelte:head>
 <ul>
-	<li><a href="https://svelte.dev/">Made with love in <b>Svelte!</b></a></li>
-	<li><a href="https://kit.svelte.dev/">Powered by <b>SvelteKit!</b></a></li>
-	<li><a href="https://github.com/enkia/tokyo-night-vscode-theme"><b>Tokyo Night</b> themed!</a></li>
+	{#if ready}
+		<li in:fly="{{ y: 48, duration: 1440 }}"><a href="https://svelte.dev/">Made with love in <b>Svelte!</b></a></li>
+		<li in:fly="{{ y: 48, duration: 1440, delay: 120 }}"><a href="https://kit.svelte.dev/">Powered by <b>SvelteKit!</b></a></li>
+		<li in:fly="{{ y: 48, duration: 1440, delay: 240 }}"><a href="https://github.com/enkia/tokyo-night-vscode-theme"><b>Tokyo Night</b> themed!</a></li>
+	{/if}
 </ul>
 
 <style lang="scss">
+	@keyframes fadeIn {
+		0% {
+			background-color: transparent;
+		}
+		100% {
+			background-color: var(--bg-lightest);
+		}
+	}
+	@keyframes fadeOut {
+		0% {
+			background-color: var(--bg-lightest);
+		}
+		100% {
+			background-color: transparent;
+		}
+	}
+	/* Taken mostly from W3Schools */
 	ul {
 		font-family: Tinos;
 		background-color: var(--bg-darker);
@@ -20,18 +45,20 @@
 		padding: 0;
 		width: 100%;
 		height: 48px;
-	}
-	li {
-		float: left;
-	}
-	li a {
-		display: block;
-		color: var(--text);
-		text-align: center;
-		padding: 14px 16px;
-		text-decoration: none;
-	}
-	li a:hover {
-		background-color: var(--bg-lightest);
+		li {
+			float: left;
+			a {
+				animation: fadeOut 0.5s ease-out;
+				display: block;
+				color: var(--text);
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				&:hover {
+					animation: fadeIn 0.5s ease-out;
+					background-color: var(--bg-lightest);
+				}
+			}
+		}
 	}
 </style>

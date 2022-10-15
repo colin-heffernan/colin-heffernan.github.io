@@ -19,6 +19,7 @@
 			--bg-lighter: #1a1b26;
 			--bg-lightest: #565f89;
 			--highlight: #7aa2f7;
+			--highlight-2: #7dcfff;
 			--text: #c0caf5;
 		}
 	</style>
@@ -29,6 +30,7 @@
 			--bg-lighter: #d5d6db;
 			--bg-lightest: #9699a3;
 			--highlight: #34548a;
+			--highlight-2: #0f4b6e;
 			--text: #343b58;
 		}
 	</style>
