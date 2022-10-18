@@ -13,7 +13,7 @@
 <main>
 	<div class="intro-container">
 		{#if ready}
-			<p class="intro-text" in:fly="{{ x: -200, duration: 1440 }}">My name is<br><b style="font-size: 48pt;color: var(--highlight);transition: color 0.5s ease-out;">Colin Heffernan</b><br>and I write code.</p>
+			<p class="intro-text" in:fly="{{ x: -200, duration: 1440 }}">My name is<br><b class="intro-text-bold" >Colin Heffernan</b><br>and I write code.</p>
 			<img src="/me.png" alt="Me!" class="intro-photo" in:fly="{{ x: 200, duration: 1440 }}"/>
 		{/if}
 	</div>
@@ -41,12 +41,6 @@
 				<h1 class="project-title">Harmonichat</h1>
 				<p class="project-desc">A lightweight live chat application!<br>Written in Node.js and Svelte.</p>
 				<div class="project-buttons">
-					<!-- <a href="https://harmonichat.vercel.app/" class="project-github-button">
-						<p class="project-github-button-label">See it live on <b>Vercel!</b></p>
-					</a>
-					<a href="https://www.github.com/colin-heffernan/Harmonichat" class="project-github-button">
-						<p class="project-github-button-label">Open-sourced on <b>GitHub!</b></p>
-					</a> -->
 					<div class="project-github-button">
 						<p class="project-github-button-label">Not quite ready...<br>...yet!</p>
 					</div>
@@ -65,9 +59,6 @@
 				<h1 class="project-title">HasFetch</h1>
 				<p class="project-desc">A blazing-fast cross-platform fetch program!<br>Written in Haskell.</p>
 				<div class="project-buttons">
-					<!-- <a href="https://www.github.com/colin-heffernan/Lottobot" class="project-github-button">
-						<p class="project-github-button-label">Open-sourced on <b>GitHub!</b></p>
-					</a> -->
 					<div class="project-github-button">
 						<p class="project-github-button-label">Not quite ready...<br>...yet!</p>
 					</div>
@@ -78,11 +69,11 @@
 	<div class="contact-container">
 		{#if ready}
 			<h1 class="contact-title" in:fly="{{ y: 75, duration: 1440, delay: 1680 }}">Contact</h1>
-			<div style="display: flex;flex-direction: row;justify-content: space-between;width: 512px;">
+			<div class="contact-method-container">
 				<p class="contact-text" in:fly="{{ x: -200, duration: 1440, delay: 1800 }}">Email:</p>
 				<p class="contact-text" in:fly="{{ x: 200, duration: 1440, delay: 1800 }}"><b style="color: var(--highlight);">colinpheffernan@gmail.com</b></p>
 			</div>
-			<div style="display: flex;flex-direction: row;justify-content: space-between;width: 512px;">
+			<div class="contact-method-container">
 				<p class="contact-text" in:fly="{{ x: -200, duration: 1440, delay: 1920 }}">Discord:</p>
 				<p class="contact-text" in:fly="{{ x: 200, duration: 1440, delay: 1920 }}"><b style="color: var(--highlight);">colin-heffernan#4704</b></p>
 			</div>
@@ -120,11 +111,17 @@
 	}
 	.intro-text {
 		color: var(--text);
-		font-size: 36pt;
+		font-size: min(5vw, 36pt);
+		transition: color 0.5s ease-out;
+		width: clamp(120px, 45%, 450px);
+	}
+	.intro-text-bold {
+		font-size: min(6vw, 48pt);
+		color: var(--highlight);
 		transition: color 0.5s ease-out;
 	}
 	.intro-photo {
-		height: 500px;
+		width: clamp(120px, 45%, 450px);
 		vertical-align: bottom;
 	}
 	.about-me-container {
@@ -133,16 +130,16 @@
 	.about-me-title, .projects-title,
 	.contact-title {
 		color: var(--highlight);
-		font-size: 36pt;
+		font-size: min(6vw, 36pt);
 		margin: 16px;
 		transition: color 0.5s ease-out;
 	}
 	.about-me-text {
 		color: var(--text);
-		font-size: 24pt;
+		font-size: min(4vw, 24pt);
 		margin: 0px;
 		transition: color 0.5s ease-out;
-		width: 1080px;
+		width: clamp(300px, 60%, 1080px);
 	}
 	.project-container {
 		border-radius: 25px;
@@ -150,18 +147,18 @@
 		flex-direction: column;
 		margin: 32px 0px;
 		padding: 0px 16px;
-		width: 720px;
+		width: clamp(240px, 80%, 720px);
 	}
 	.project-title {
 		color: var(--highlight);
-		font-size: 30pt;
+		font-size: min(5vw, 30pt);
 		margin: 16px 0 0 0;
 		text-align: center;
 		transition: color 0.5s ease-out;
 	}
 	.project-desc {
 		color: var(--text);
-		font-size: 18pt;
+		font-size: min(3vw, 18pt);
 		margin: 16px 0;
 		text-align: center;
 		transition: color 0.5s ease-out;
@@ -178,7 +175,7 @@
 		background-color: var(--highlight);
 		border-radius: 16px;
 		display: block;
-		width: 196px;
+		width: clamp(98px, 36%, 196px);
 		padding: 0 16px; 
 		&:hover {
 			background-color: var(--highlight-2);
@@ -186,13 +183,19 @@
 	}
 	.project-github-button-label {
 		color: var(--bg-lighter);
-		font-size: 18pt;
+		font-size: min(3vw, 18pt);
 		text-align: center;
 		transition: color 0.5s ease-out;
 	}
+	.contact-method-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: clamp(256px, 50%, 512px);
+	}
 	.contact-text {
 		color: var(--text);
-		font-size: 24pt;
+		font-size: min(4vw, 24pt);
 		transition: color 0.5s ease-out;
 	}
 </style>
