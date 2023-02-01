@@ -38,12 +38,12 @@
 		{#if ready}
 			<h1 class="projects-title" in:fly="{{ y: 75, duration: 1440, delay: 960 }}">Projects</h1>
 			<div class="project-container" in:fly="{{ y: 75, duration: 1440, delay: 1080 }}">
-				<h1 class="project-title">Harmonichat</h1>
+				<h1 class="project-title">Pulsar Chat</h1>
 				<p class="project-desc">A lightweight live chat application!<br>Written in Node.js and Svelte.</p>
 				<div class="project-buttons">
-					<div class="project-github-button">
-						<p class="project-github-button-label">Not quite ready...<br>...yet!</p>
-					</div>
+					<a href="https://pulsarchat.vercel.app/" class="project-github-button">
+						<p class="project-github-button-label">See it live on <b>Vercel!</b></p>
+					</a>
 				</div>
 			</div>
 			<div class="project-container" in:fly="{{ y: 75, duration: 1440, delay: 1200 }}">
